@@ -1,0 +1,42 @@
+title = "Статья"
+url = "/blog/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Admin\articles\Models\Articles"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+<section class="blog_area single-post-area section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+                  <div class="feature-img">
+                     <img class="img-fluid" src="/storage/app/media{{ record.image }}" alt="">
+                  </div>
+                    <div class="blog_details">
+                        <h2>
+                        {{ record.title }}
+                        </h2>
+                        <ul class="blog-info-link mt-3 mb-4">
+                            <li><a href="{{ 'services'|page }}"></i><strong>Назад</strong></a></li>
+                        </ul>
+                        <p>
+                            {{ record.content|raw }}
+                        </p>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+fields:
+    name:
+        label: 'ФИО сотрудника'
+        span: left
+        required: 1
+        type: text
+    position:
+        label: 'Должность сотрудника'
+        span: right
+        required: 1
+        type: text
+    image:
+        label: 'Изображение сотрудника'
+        span: auto
+        mode: file
+        type: mediafinder

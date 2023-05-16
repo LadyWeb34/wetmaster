@@ -1,0 +1,46 @@
+[builderList feedbackList]
+modelClass = "Admin\feedbacks\Models\Feedback"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "asc"
+==
+{% set records = feedbackList.records %}
+{% set displayColumn = feedbackList.displayColumn %}
+{% set noRecordsMessage = feedbackList.noRecordsMessage %}
+{% set detailsPage = feedbackList.detailsPage %}
+{% set detailsKeyColumn = feedbackList.detailsKeyColumn %}
+{% set detailsUrlParameter = feedbackList.detailsUrlParameter %}
+<div class="testmonial_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="textmonial_active owl-carousel">
+                        {% for record in records %}
+                            {% if record.status == 1 %}
+                                {% spaceless %}
+                                    <div class="testmonial_wrap">
+                                        <div class="single_testmonial d-flex align-items-center">
+                                            <div class="test_thumb">
+                                                <img src="{{ 'assets/img/testmonial/1.png'|theme }}" alt="">
+                                            </div>
+                                            <div class="test_content">
+                                                <h4>{{ record.name }}</h4>
+                                                <span>Клиент</span>
+                                                <p>{{ record.content }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endspaceless %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

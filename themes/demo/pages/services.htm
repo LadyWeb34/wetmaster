@@ -1,0 +1,66 @@
+title = "Услуги"
+url = "/services"
+layout = "default"
+is_hidden = 0
+
+[builderList serviceList]
+modelClass = "Admin\setvices\Models\Service"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "single-service"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "desc"
+==
+{% set records = serviceList.records %}
+{% set displayColumn = serviceList.displayColumn %}
+{% set noRecordsMessage = serviceList.noRecordsMessage %}
+{% set detailsPage = serviceList.detailsPage %}
+{% set detailsKeyColumn = serviceList.detailsKeyColumn %}
+{% set detailsUrlParameter = serviceList.detailsUrlParameter %}
+    <div class="bradcam_area" style="background-image: url('{{ 'assets/img/about/bradcam3.png'|theme }}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Услуги</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end -->
+<div class="blog-wrapper section-padding-80">
+        <div class="container">
+            <div class="row">
+            {% for record in records %}
+                    {% spaceless %}
+                    {% if record.status == 1 %}
+                        <div class="col-12 col-lg-4">
+                            <div class="single-blog-area mb-50">
+                                <img height="350" src="/storage/app/media{{ record.image }}" alt="" style="object-fit: cover;">
+                                <!-- Post Title -->
+                                <div class="post-title">
+                                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">{{ record.title }}</a>
+                                </div>
+                                <!-- Hover Content -->
+                                <div class="hover-content">
+                                    <!-- Post Title -->
+                                    <div class="hover-post-title">
+                                        <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">{{ record.title }}</a>
+                                    </div>
+                                    <p>{{ html_limit(record.small_descr, 20) }}</p>
+                                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}"></li>Подробнее <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% endspaceless %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>

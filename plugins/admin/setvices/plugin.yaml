@@ -1,0 +1,11 @@
+plugin:
+    name: 'admin.setvices::lang.plugin.name'
+    description: 'admin.setvices::lang.plugin.description'
+    author: admin
+    icon: wn-icon-adjust
+    replaces: {  }
+navigation:
+    main-menu-services:
+        label: Услуги
+        url: admin/setvices/services
+        icon: icon-flash

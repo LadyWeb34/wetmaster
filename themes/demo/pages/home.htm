@@ -1,0 +1,130 @@
+title = "Главная"
+url = "/"
+layout = "default"
+==
+    <div class="slider_area">
+        <div class="single_slider d-flex align-items-center" style="background-image: url('{{ 'assets/img/about/banner.png'|theme }}');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="slider_text">
+                            <h3>Ветеринарная клиника <br> <span>Ветмастер</span></h3>
+                            <p>Заботимся о вашей четвероногой семье!</p>
+                            <a href="{{ 'contact'|page }}" class="boxed-btn4">Связь с нами</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dog_thumb d-none d-lg-block">
+                <img src="{{ '/assets/img/about/dog.png'|theme }}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+	
+	
+	
+	 <!-- service_area_start  -->
+    <div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-7 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Мы знаем, как много они для вас значат</h3>
+                        <p>........</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="{{ 'assets/img/service/service_icon_1.png'|theme }}" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Pet Boarding</h3>
+                            <p>.......</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service active">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="{{ 'assets/img/service/service_icon_2.png'|theme }}" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Healthy Meals</h3>
+                            <p>.......</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                         <div class="service_thumb service_icon_bg_1 d-flex align-items-center justify-content-center">
+                             <div class="service_icon">
+                                 <img src="{{ 'assets/img/service/service_icon_3.png'|theme }}" alt="">
+                             </div>
+                         </div>
+                         <div class="service_content text-center">
+                            <h3>Pet Spa</h3>
+                            <p>.......</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end -->
+	
+	 <!-- pet_care_area_start  -->
+    <div class="pet_care_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-6">
+                    <div class="pet_thumb">
+                        <img src="{{ '/assets/img/about/pet_care.png'|theme }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 col-md-6">
+                    <div class="pet_info">
+                        <div class="section_title">
+                            <h3><span>Мы заботимся о ваших питомцах, </span> <br>
+                                Как и вы</h3>
+                            <p>........</p>
+                            <a href="{{ 'about'|page }}" class="boxed-btn4">Подробнее о нас</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pet_care_area_end  -->
+	
+    {% partial 'site/feedback' %}
+
+    <!-- team_area_start  -->
+    {% partial 'site/team' %}
+    <!-- team_area_start  -->
+
+    <div class="contact_anipat anipat_bg_1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact_text text-center">
+                        <div class="section_title text-center">
+                            <h3>Почему стоит обращаться именно к нам?</h3>
+                            <p>Потому что мы знаем, что даже самая лучшая технология нехороша настолько, насколько хороши люди, стоящие за ней.</p>
+                        </div>
+                        <div class="contact_btn d-flex align-items-center justify-content-center">
+                            <a href="{{ 'contact'|page }}" class="boxed-btn4">Свяжитесь с нами тут</a>
+                            <p>Или по номеру  <a href="tel:+78442500401"> +7 (8442) 50-04-01</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

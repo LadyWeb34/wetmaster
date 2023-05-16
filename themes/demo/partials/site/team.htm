@@ -1,0 +1,51 @@
+[builderList]
+modelClass = "Admin\teams\Models\Team"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "name"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "asc"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+<ul class="record-list">
+<div class="team_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Наша команда</h3>
+                        <p>Мы не обычные ветеринары.Мы относимся к домашним животным как к семье</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                {% for record in records %}
+                        {% spaceless %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single_team">
+                                    <div class="thumb">
+                                        <img src="/storage/app/media{{ record.image }}" alt="">
+                                    </div>
+                                    <div class="member_name text-center">
+                                        <div class="mamber_inner">
+                                            <h4>{{ record.name }}</h4>
+                                            <p>{{ record.position }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endspaceless %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>

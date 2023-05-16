@@ -1,0 +1,4 @@
+title: Teams
+modelClass: Admin\teams\Models\Team
+toolbar:
+    buttons: reorder_toolbar

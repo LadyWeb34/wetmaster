@@ -1,0 +1,16 @@
+fields:
+    name:
+        label: 'Введите имя клиента'
+        span: full
+        required: 1
+        type: text
+    content:
+        label: 'Введите отзыв клиента'
+        size: ''
+        span: full
+        required: 1
+        type: textarea
+    status:
+        label: 'Отображение отзыва'
+        span: auto
+        type: switch

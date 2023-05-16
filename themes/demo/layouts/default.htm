@@ -1,0 +1,132 @@
+; description = "Default layout"
+; ==
+; <!DOCTYPE html>
+; <html>
+;     <head>
+;         <meta charset="utf-8">
+;         <title>Winter CMS - {{ this.page.title }}</title>
+;         <meta name="description" content="{{ this.page.meta_description }}">
+;         <meta name="title" content="{{ this.page.meta_title }}">
+;         <meta name="author" content="Winter CMS">
+;         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+;         <meta name="generator" content="Winter CMS">
+;         <link rel="icon" type="image/png" href="{{ 'assets/images/winter.png'|theme }}">
+;         <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+;         <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+;         {% styles %}
+;     </head>
+;     <body>
+
+;         <!-- Header -->
+;         <header id="layout-header">
+;             {% partial 'site/header' %}
+;         </header>
+
+;         <!-- Content -->
+;         <section id="layout-content">
+;             {% page %}
+;         </section>
+
+;         <!-- Footer -->
+;         <footer id="layout-footer">
+;             {% partial 'site/footer' %}
+;         </footer>
+
+;         <!-- Scripts -->
+;         <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+;         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+;         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+;         {% snowboard all %}
+;         {% scripts %}
+
+;     </body>
+; </html>
+description = "Базовый шаблон"
+==
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ветмастер - {{ this.page.title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ 'assets/img/favicon.png'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/bootstrap.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/owl.carousel.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/magnific-popup.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/font-awesome.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/themify-icons.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/nice-select.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/flaticon.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/gijgo.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/animate.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/slicknav.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/style.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/core-style.css'|theme }}">
+    {% styles %}
+</head>
+<body>
+    {% partial 'site/header' %}
+        {% page %}
+    {% partial 'site/footer' %}
+    <!-- footer_end  -->
+		
+
+    <!-- JS here -->
+    <script src="{{ 'assets/js/vendor/modernizr-3.5.0.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/vendor/jquery-1.12.4.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/popper.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/bootstrap.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/owl.carousel.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/isotope.pkgd.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/ajax-form.js'|theme }}"></script>
+    <script src="{{ 'assets/js/waypoints.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.counterup.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/imagesloaded.pkgd.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/scrollIt.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.scrollUp.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/wow.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/nice-select.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.slicknav.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.magnific-popup.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/plugins.js'|theme }}"></script>
+    <script src="{{ 'assets/js/gijgo.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/contact.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.ajaxchimp.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.form.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.validate.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/mail-script.js'|theme }}"></script>
+
+    <script src="{{ 'assets/js/main.js'|theme }}"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            disableDaysOfWeek: [0, 0],
+        //     icons: {
+        //      rightIcon: '<span class="fa fa-caret-down"></span>'
+        //  }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+         format: 'HH.MM'
+     });
+    </script>
+					
+		  <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{{ 'assets/js/jquery/jquery-2.2.4.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/popper.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/bootstrap.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/plugins.js'|theme }}"></script>
+    <script src="{{ 'assets/js/classy-nav.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/active.js'|theme }}"></script>
+    {% snowboard all %}
+    {% scripts %}
+</body>
+</html>

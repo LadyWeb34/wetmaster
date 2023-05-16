@@ -1,0 +1,4 @@
+title: Articles
+modelClass: Admin\articles\Models\Articles
+toolbar:
+    buttons: reorder_toolbar

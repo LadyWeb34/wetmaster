@@ -1,0 +1,10 @@
+name: Teams
+form: $/admin/teams/models/team/fields.yaml
+modelClass: Admin\teams\Models\Team
+defaultRedirect: admin/teams/teams
+create:
+    redirect: 'admin/teams/teams/update/:id'
+    redirectClose: admin/teams/teams
+update:
+    redirect: admin/teams/teams
+    redirectClose: admin/teams/teams

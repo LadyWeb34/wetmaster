@@ -1,0 +1,26 @@
+fields:
+    title:
+        label: 'Название статьи'
+        span: left
+        type: text
+    slug:
+        label: 'URL - адрес'
+        span: right
+        preset:
+            field: title
+            type: slug
+        type: text
+    content:
+        label: 'Контент статьи'
+        size: huge
+        span: full
+        type: richeditor
+    image:
+        label: 'Главное изображение'
+        mode: image
+        span: auto
+        type: mediafinder
+    status:
+        label: 'Отображение записи'
+        span: auto
+        type: switch

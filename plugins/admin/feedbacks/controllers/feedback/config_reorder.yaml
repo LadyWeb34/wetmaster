@@ -1,0 +1,4 @@
+title: Feedback
+modelClass: Admin\feedbacks\Models\Feedback
+toolbar:
+    buttons: reorder_toolbar

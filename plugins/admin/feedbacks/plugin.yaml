@@ -1,0 +1,11 @@
+plugin:
+    name: 'admin.feedbacks::lang.plugin.name'
+    description: 'admin.feedbacks::lang.plugin.description'
+    author: admin
+    icon: wn-icon-comments-o
+    replaces: {  }
+navigation:
+    main-menu-feedback:
+        label: Отзывы
+        url: admin/feedbacks/feedback
+        icon: icon-comment-o

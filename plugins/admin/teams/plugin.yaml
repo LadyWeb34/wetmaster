@@ -1,0 +1,11 @@
+plugin:
+    name: 'admin.teams::lang.plugin.name'
+    description: 'admin.teams::lang.plugin.description'
+    author: admin
+    icon: wn-icon-users
+    replaces: {  }
+navigation:
+    main-menu-team:
+        label: Сотрудники
+        url: admin/teams/teams
+        icon: icon-users

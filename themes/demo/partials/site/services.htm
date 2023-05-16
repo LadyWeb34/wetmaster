@@ -1,0 +1,48 @@
+[builderList]
+modelClass = "Admin\setvices\Models\Service"
+scope = "-"
+scopeValue = "{{ :slug }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "single-service"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+    <div class="testmonial_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="textmonial_active owl-carousel">
+                        {% for record in records %}
+                            {% spaceless %}
+                                {% if record.status == 1 %}
+                                    <div class="testmonial_wrap">
+                                        <div class="single_testmonial d-flex align-items-center">
+                                            <div class="test_thumb">
+                                                <img src="/storage/app/media{{ record.icon }}" alt="">
+                                            </div>
+                                            <div class="test_content">
+                                                <h4>{{ record.title }}</h4>
+                                                <ul class="blog-info-link mt-3 mb-4">
+                                                <li><a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}"></i><strong>Перейти к услуге</strong></a></li>
+                                                </ul>
+                                                <p>{{ html_limit(record.small_descr, 20) }}<p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endspaceless %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,41 @@
+fields:
+    title:
+        label: 'Название услуги'
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: 'URL - адрес'
+        span: right
+        required: 1
+        preset:
+            field: title
+            type: slug
+        type: text
+    small_descr:
+        label: 'Краткое описание'
+        size: ''
+        span: full
+        required: 1
+        type: textarea
+    content:
+        label: 'Полное описание услуги'
+        size: large
+        span: full
+        stretch: 0
+        type: richeditor
+    image:
+        label: 'Главное изображение'
+        mode: image
+        span: auto
+        required: 1
+        type: mediafinder
+    icon:
+        label: Иконка
+        span: right
+        mode: file
+        type: mediafinder
+    status:
+        label: Отображение
+        span: auto
+        type: switch

@@ -1,0 +1,70 @@
+title = "Полезные статьи"
+url = "/blog"
+layout = "default"
+is_hidden = 0
+
+[builderList blogList]
+modelClass = "Admin\articles\Models\Articles"
+scope = "-"
+scopeValue = "{{ :slug }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "single-blog"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "desc"
+==
+{% set records = blogList.records %}
+{% set displayColumn = blogList.displayColumn %}
+{% set noRecordsMessage = blogList.noRecordsMessage %}
+{% set detailsPage = blogList.detailsPage %}
+{% set detailsKeyColumn = blogList.detailsKeyColumn %}
+{% set detailsUrlParameter = blogList.detailsUrlParameter %}
+    <div class="bradcam_area" style="background-image: url('{{ 'assets/img/about/bradcam6.png'|theme }}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Полезные статьи</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                    {% for record in records %}
+                        {% spaceless %}
+                            {% if record.status == 1 %}
+                                <article class="blog_item">
+                                    <div class="blog_item_img">
+                                        <img class="card-img rounded-0" src="/storage/app/media{{ record.image }}" alt="">
+                                        <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}" class="blog_item_date">
+                                            <h3>{{ record.updated_at.format('d.m') }}</h3>
+                                            <p>{{ record.updated_at.format('Y') }}</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="blog_details">
+                                        <a class="d-inline-block" href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                                            <h2>{{ record.title }}</h2>
+                                        </a>
+                                        <p>{{ html_limit(record.content, 50) }}</p>
+                                        <ul class="blog-info-link">
+                                            <li><a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}"><i class="fa fa-user"></i>Автор: Администратор</a></li>
+                                        </ul>
+                                    </div>
+                                </article>
+                            {% endif %}
+                        {% endspaceless %}
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,10 @@
+name: Services
+form: $/admin/setvices/models/service/fields.yaml
+modelClass: Admin\setvices\Models\Service
+defaultRedirect: admin/setvices/services
+create:
+    redirect: 'admin/setvices/services/update/:id'
+    redirectClose: admin/setvices/services
+update:
+    redirect: admin/setvices/services
+    redirectClose: admin/setvices/services
