@@ -126,6 +126,31 @@ description = "Базовый шаблон"
     <script src="{{ 'assets/js/plugins.js'|theme }}"></script>
     <script src="{{ 'assets/js/classy-nav.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/active.js'|theme }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+       function sendEmail(){
+        Email.send({
+        SecureToken : "9f42276a-8390-4b89-8c40-d19b2fc58454",
+        To : 'nayskom@gmail.com',
+        From : "nayskom@gmail.com",
+        Subject : "Новая заявка с сайта",
+        Body : "Имя: " + document.getElementById('name').value
+            + "<br> Email: " + document.getElementById('email').value
+            + "<br> Тема: " + document.getElementById('subject').value
+            + "<br> Сообщение: " + document.getElementById('message').value
+            }).then(
+            message => Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Заявка отправлена',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        );
+       }
+        
+    </script>
     {% snowboard all %}
     {% scripts %}
 </body>

@@ -35,23 +35,23 @@ $(document).ready(function(){
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "Пожалуйста, введите свое имя.",
+                    minlength: "Ваше имя должно состоять как минимум из 2 символов."
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
+                    required: "Пожалуйста, введите тему сообщения.",
+                    minlength: "Ваша тема должна состоять как минимум из 4 символов."
                 },
                 number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                    required: "Введите свой номер телефона.",
+                    minlength: "Ваш номер должен состоять как минимум из 5 символов."
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "Ни электронной почты, ни сообщения."
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "Вы должны что-то написать, чтобы отправить эту форму.",
+                    minlength: "Введите не менее 10 символов."
                 }
             },
             submitHandler: function(form) {
